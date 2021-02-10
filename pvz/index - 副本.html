@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>pvz</title>
+		<script src="dom.js"> </script>
+		<script src="pvz.js"> </script>
+		<style>
+			#gameMain{
+				width: 1000px;
+				height: 1000px;
+				border-style: solid;
+				border-width:0px ;
+				overflow: hidden;
+			}
+			#playgame{
+				position:absolute;
+				top:444px;
+				left:350px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="gameMain" >
+		<div id="MU">
+			<img style="width: 813px;height: 544px;" src="U4126P1T1D30588383F21DT20140728145300.jpg" >
+			<button id="playgame">开始游戏</button>
+		</div>
+		<div id="jzimg" style="display: none;">正在加载中</div>
+		<div id="level" style="display: none;">
+			<div id="gameback"><img src="background1.jpg"></div><!-- 游戏背景 -->
+			<div id="kc"></div><!-- 卡槽-->
+			<div id="zombieQK" style="width:300px;height:544px;position: relative;left:1000px;bottom: 544px;"></div><!-- 僵尸显示栏-->
+		</div>
+		
+		</div>
+		<script>
+				pvz = new main("pvz");
+				pvz.jz();
+					play = document.getElementById("playgame");
+						play.onclick = function(){
+						var jztp = MUdel = document.getElementById("jzimg");
+						setarrt("style","display: inline;",jztp);
+						var MUdel = document.getElementById("MU");
+						setnewarrt("style","display: none;",MUdel);
+						setTimeout(function(){
+							setnewarrt("style","display: none;",jztp);
+							var level=document.getElementById("level");
+							setarrt("style","display: inline;",level);
+							var QK = document.getElementById("zombieQK");
+							zombie = new zombieqk("zombie",QK,1000,50,1000,200);
+							zombie.setimg();
+							backimg=document.getElementById("gameback");
+							level1=new levelbackground(backimg,QK,1000);
+							level1.yd();
+						},2000);
+						
+						
+						// MUdel.removeChild(MUdel.children[0]);
+						// level = appenddom("div",MUdel);
+						// setarrt("id","level1",level);
+						// var backimg=document.createElement("img");
+						// level.appendChild(backimg);
+						// var setbackid=document.createAttribute("src");
+						// setbackid.value="http://pvz4.lonelystar.org/images/interface/background1unsodded.jpg";
+						// backimg.setAttributeNode(setbackid);
+						// var backimg2=document.createElement("img");
+						// level.appendChild(backimg2);
+						// var setbackid2=document.createAttribute("src");
+						// setbackid2.value="http://pvz4.lonelystar.org/images/Zombies/Zombie/Zombie2.gif";
+						// backimg2.setAttributeNode(setbackid2);
+					
+					
+					}
+			
+		</script>
+			最新记录请见：https://wds.ecsxs.com/2639.html
+	</body>
+</html>

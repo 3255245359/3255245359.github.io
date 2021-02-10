@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>pvz</title>
+		
+		<style>
+			#gameMain{
+				width: 813px;
+				height: 544px;
+				border-style: solid;
+				border-width:1px ;
+			}
+			#playgame{
+				position:absolute;
+				top:444px;
+				left:350px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="gameMain" >
+		<div id="MU">
+			<img style="width: 813px;height: 544px;" src="http://i1.sinaimg.cn/dy/m/2014-07-28/U4126P1T1D30588383F21DT20140728145300.jpg" >
+			<button id="playgame">开始游戏</button>
+		</div>
+		
+		</div>
+		<script>
+			play = document.getElementById("playgame");
+			play.onclick = function(){
+				var MUdel = document.getElementById("gameMain");
+				MUdel.removeChild(MUdel.children[0]);
+			}
+		
+			function main(name){
+				this.name=name;
+			} 
+			pvz = new main("pvz");
+			alert(pvz.name);
+			
+		</script>
+		
+	</body>
+</html>
